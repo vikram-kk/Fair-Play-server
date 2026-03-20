@@ -9,6 +9,8 @@ import scoreRoute from './routes/scores.route.js';
 import subscriptionRoute from "./routes/subscription.route.js";
 import charityRoute from './routes/charity.route.js'
 import dashboardroute from './routes/dashboard.route.js'
+import cors from "cors";
+
 
 
 dotenv.config();
@@ -20,7 +22,10 @@ const app = express();
 connectDb();
 
 
-app.use(cors());
+app.use(cors({
+    origin: "*"
+}));
+
 app.use(express.json());
 
 
